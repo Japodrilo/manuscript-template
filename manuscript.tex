@@ -1,0 +1,114 @@
+\documentclass{article}
+
+%% Inclusion of images
+\usepackage{graphicx}
+
+%% Authors names and institutions
+\usepackage{authblk}
+
+%% Drawing
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc}
+
+% Tikz style for graph drawing
+\tikzstyle{arc}=[->,shorten <=3pt, shorten >=3pt,
+                 >=stealth, line width=1.1pt]
+\tikzstyle{edge}=[shorten <=2pt, shorten >=2pt,
+                  >=stealth, line width=1.1pt]
+\tikzstyle{vertex}=[circle, fill=white, draw,
+                    minimum size=5pt,
+                    inner sep=0pt, outer sep=0pt]
+
+%% Positioning of floats
+\usepackage{float}
+
+%% Color in text, tables, etc.
+\usepackage{xcolor}
+
+%% Additional symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%% Theorem environments
+\usepackage{amsthm}
+
+%% References with automatic names
+\usepackage[capitalize]{cleveref}
+
+% Theorem definition
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\title{Title%
+\thanks{The authors gratefully acknowledge support from some grant}}
+
+\author[1]{First~Author\thanks{first@mail.edu}}
+\author[2]{Second~Author\thanks{second@mail.mx}}
+\author[3]{Third~Author\thanks{third@mail.go}}
+
+\affil[1]{First Author's Department,
+          First Author's Univeristy}
+\affil[2]{Second Author's Department,
+          Second Author's Univeristy}
+\affil[3]{Third Author's Department,
+          Third Author's Univeristy}
+
+\begin{document}
+\date{}
+
+\maketitle
+\begin{abstract}
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\end{abstract}
+
+
+\section{Introduction}
+
+Try using the \texttt{cleveref} package :D
+
+\begin{theorem}
+\label{thm:first}
+First example theorem.
+\end{theorem}
+
+\begin{theorem}
+\label{thm:second}
+Second example theorem.
+\end{theorem}
+
+\begin{lemma}
+\label{lem:first}
+First example lemma.
+\end{lemma}
+
+\texttt{Cleveref} automatically detects the type of environment you
+are referring to, and fills in its name.   For example, you might
+refer to \Cref{thm:first,thm:second}, or to \Cref{thm:second,lem:first}.
+
+
+\vspace{2mm}
+
+
+\begin{thebibliography}{}
+
+\bibitem{bang2009}
+  J.~Bang-Jensen and G.~Gutin,
+  Digraphs Theory Algorithms and Applications
+  Second Edition,
+  Springer-Verlag London (2009).
+
+\bibitem{haskinsSIAMJC2}
+  L. Haskins, and D.J. Rose,
+  Toward characterization of perfect elimination digraphs,
+  SIAM Journal on Computing 2 (1973) 217 -- 224.
+\end{thebibliography}
+
+
+\end{document}
