@@ -11,13 +11,10 @@
 \usetikzlibrary{arrows,calc}
 
 % Tikz style for graph drawing
-\tikzstyle{arc}=[->,shorten <=3pt, shorten >=3pt,
-                 >=stealth, line width=1.1pt]
-\tikzstyle{edge}=[shorten <=2pt, shorten >=2pt,
-                  >=stealth, line width=1.1pt]
-\tikzstyle{vertex}=[circle, fill=white, draw,
-                    minimum size=5pt,
-                    inner sep=0pt, outer sep=0pt]
+\tikzstyle{arc}=[->,shorten <=3pt, shorten >=3pt, >=stealth, line width=1.1pt]
+\tikzstyle{edge}=[shorten <=2pt, shorten >=2pt, >=stealth, line width=1.1pt]
+\tikzstyle{vertex}=[circle, fill=white, draw, minimum size=5pt, inner sep=0pt,
+                    outer sep=0pt]
 
 %% Positioning of floats
 \usepackage{float}
@@ -32,14 +29,27 @@
 %% Theorem environments
 \usepackage{amsthm}
 
+%% Hyperlinks
+\usepackage[colorlinks=true]{hyperref}
+
 %% References with automatic names
 \usepackage[capitalize]{cleveref}
+
+%% To automatically add spaces after defined commands, if needed
+\usepackage{xspace}
 
 % Theorem definition
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition} 
+\newtheorem{problem}[theorem]{Problem}
+
+% Name definition for cleveref
+\crefname{problem}{problem}{problems}
+\Crefname{problem}{Problem}{Problems}
 
 \title{Title%
 \thanks{The authors gratefully acknowledge support from some grant}}
@@ -75,22 +85,30 @@ Try using the \texttt{cleveref} package :D
 
 \begin{theorem}
 \label{thm:first}
-First example theorem.
+    First example theorem.
 \end{theorem}
 
 \begin{theorem}
 \label{thm:second}
-Second example theorem.
+    Second example theorem.
 \end{theorem}
 
 \begin{lemma}
 \label{lem:first}
-First example lemma.
+    First example lemma.
 \end{lemma}
 
-\texttt{Cleveref} automatically detects the type of environment you
-are referring to, and fills in its name.   For example, you might
-refer to \Cref{thm:first,thm:second}, or to \Cref{thm:second,lem:first}.
+\begin{problem}
+\label{prb:first}
+    Test for an undefined cleveref name.
+\end{problem}
+
+\texttt{Cleveref} automatically detects the type of environment you are
+referring to, and fills in its name.   For example, you might refer to
+\Cref{thm:first,thm:second}, or to \Cref{thm:second,lem:first}.   Sometimes,
+e.g. in Overleaf, some environments are not detected correctly by
+\texttt{Cleveref}, but we can add their names manually; this is the case of
+\Cref{prb:first}.
 
 
 \vspace{2mm}
@@ -99,15 +117,15 @@ refer to \Cref{thm:first,thm:second}, or to \Cref{thm:second,lem:first}.
 \begin{thebibliography}{}
 
 \bibitem{bang2009}
-  J.~Bang-Jensen and G.~Gutin,
-  Digraphs Theory Algorithms and Applications
-  Second Edition,
-  Springer-Verlag London (2009).
+    J.~Bang-Jensen and G.~Gutin,
+    Digraphs Theory Algorithms and Applications
+    Second Edition,
+    Springer-Verlag London (2009).
 
 \bibitem{haskinsSIAMJC2}
-  L. Haskins, and D.J. Rose,
-  Toward characterization of perfect elimination digraphs,
-  SIAM Journal on Computing 2 (1973) 217 -- 224.
+    L. Haskins, and D.J. Rose,
+    Toward characterization of perfect elimination digraphs,
+    SIAM Journal on Computing 2 (1973) 217 -- 224.
 \end{thebibliography}
 
 
